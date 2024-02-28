@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Login</h1>
+      <br>
+
+      <form action="/adminlogin" method="POST">
+        <h3 class="text-center mb-3">Admin Login</h3>
+        <br>
+        {% if error_message_admin %}
+        <div class="text-center mb-4" role="alert">
+          {{ error_message_admin }}
+        </div>
+        {% endif %}
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-primary btn-block">Login as Admin</button>
+      </form>
+      <br>
+      <br>
+
+      <form action="/customerlogin" method="POST">
+        <h3 class="text-center mt-4 mb-3">Customer Login</h3>
+        <br>
+        {% if error_message %}
+        <div class="text-center mb-4" role="alert">
+          {{ error_message }}
+        </div>
+        {% endif %}
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="password" name="bookingnr" placeholder="Booking Number" required>
+        <button type="submit" class="btn btn-primary btn-block">Login as Customer</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

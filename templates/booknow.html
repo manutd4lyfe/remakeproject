@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}
+Pick a Room
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-12">
+	</div>
+  </div>
+
+  <h1 style="color: #fff; font-family: 'Arial', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 11px; background-color: #333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: left;">Single Room</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm mb-4 room-card">
+        <img src="/static/singleroom.jpg" class="card-img-top img-fluid" alt="Single Room">
+        <div class="card-body">
+          <b><mark>Available Rooms at the moment: {{ single_rooms_available }}</mark></b><br><br>
+          <p class="card-text">Perfect for solo travelers seeking tranquility.</p>
+          <ul class="list-unstyled">
+            <li>Bed: 1 Single Bed</li>
+            <li>Max Occupancy: 1 Person</li>
+            <li>Size: 200 sqft</li>
+            <li>View: City View</li>
+            <li>Free Wi-Fi</li>
+            <li>Amenities: Work Desk, Mini-Fridge</li>
+            <li>Bathroom: Private with Shower</li>
+            <li>Additional Services: Laundry, Room Cleaning</li>
+            <li>Accessibility: Not wheelchair accessible</li>
+            <br>
+            <li>Price: €100/night</li>
+            <br>
+          </ul>
+        </div>
+        <div class="card-footer bg-transparent border-0 text-center">
+          <div class="d-flex justify-content-between align-items-center">
+            {% if single_rooms_available > 0 %}
+              <a id="single-room-link" href="/booking?room=single" class="btn btn-primary">Book Now</a>
+            {% else %}
+              <span class="btn btn-primary disabled" aria-disabled="true">No Rooms Available</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: #fff; font-family: 'Arial', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 11px; background-color: #333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: left;">Double Room</h1>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm mb-4 room-card">
+        <img src="/static/doubleroom.jpg" class="card-img-top img-fluid" alt="Double Room">
+        <div class="card-body">
+          <b><mark>Available Rooms at the moment: {{ double_rooms_available }}</mark></b><br><br>
+          <p class="card-text">Ideal for couples seeking romance and comfort.</p>
+          <ul class="list-unstyled">
+            <li>Bed: 1 Queen Bed</li>
+            <li>Max Occupancy: 2 Persons</li>
+            <li>Size: 300 sqft</li>
+            <li>View: Garden View</li>
+            <li>Free Breakfast Included</li>
+            <li>Amenities: Work Desk, Mini-Fridge</li>
+            <li>Bathroom: Private with Bathtub and Shower</li>
+            <li>Additional Services: Room Cleaning, Concierge Services</li>
+            <li>Accessibility: Wheelchair accessible</li>
+            <br>
+            <li>Price: €150/night</li>
+            <br>
+          </ul>
+        </div>
+        <div class="card-footer bg-transparent border-0 text-center">
+          <div class="d-flex justify-content-between align-items-center">
+            {% if double_rooms_available > 0 %}
+              <a id="double-room-link" href="/booking?room=double" class="btn btn-primary">Book Now</a>
+            {% else %}
+              <span class="btn btn-primary disabled" aria-disabled="true">No Rooms Available</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="color: #fff; font-family: 'Arial', sans-serif; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 11px; background-color: #333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: left;">Suite</h1>
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm mb-4 room-card">
+        <img src="/static/suite.jpg" class="card-img-top img-fluid" alt="Suite">
+        <div class="card-body">
+          <b><mark>Available Rooms at the moment: {{ suites_available }}</mark></b>
+          <br><br>
+          <p class="card-text">Experience lavish comfort and stunning views.</p>
+          <ul class="list-unstyled">
+            <li>Bed: 1 King Bed</li>
+            <li>Max Occupancy: 2 Persons</li>
+            <li>Size: 500 sqft</li>
+            <li>View: Ocean View</li>
+            <li>Private Jacuzzi</li>
+            <li>Room Service Available</li>
+            <li>Amenities: Work Desk, Mini-Bar, Flat-screen TV</li>
+            <li>Bathroom: Private with Separate Shower and Bathtub</li>
+            <li>Additional Features: Balcony, Fireplace</li>
+            <li>Accessibility: Not wheelchair accessible</li>
+            <br>
+            <li>Price: €200/night</li>
+            <br>
+          </ul>
+        </div>
+        <div class="card-footer bg-transparent border-0 text-center">
+          <div class="d-flex justify-content-between align-items-center">
+            {% if suites_available > 0 %}
+              <a id="suite-link" href="/booking?room=suite" class="btn btn-primary">Book Now</a>
+            {% else %}
+              <span class="btn btn-primary disabled" aria-disabled="true">No Rooms Available</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,353 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#navbar .logo {
+  margin-right: 10px;
+}
+
+#navbar .logo img {
+  width: 40px;
+  height: 40px;
+}
+
+#navbar .logo-text {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  flex-grow: 1;
+}
+
+#navbar ul li {
+  display: inline-block;
+}
+
+#navbar ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+#navbar ul li a:hover {
+  background-color: #0fce0f;
+}
+
+@media screen and (max-width: 768px) {
+  #navbar ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  #navbar ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  #navbar ul li a {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+#navbar .logo img {
+  width: 40px;
+  height: 40px;
+  user-select: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: rgb(20, 9, 9);
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.small-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #292828;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #dacbcb;
+}
+
+.room-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.room-card .card-body {
+  padding: 40px;
+  flex: 4;
+}
+
+.room-card img {
+  border-radius: 1px 0 0 10px;
+  width: 600px;
+  height: 370px;
+  object-fit: cover;
+}
+
+.room-card .btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.room-card .btn:hover {
+  background-color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 0px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+}
+
+.booking-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.menu-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+  color: rgb(20, 9, 9);
+}
+
+.menu-item p {
+  margin-bottom: 10px;
+}
+
+.menu-item strong {
+  font-weight: bold;
+}
+
+.content {
+  text-align: center;
+}
+
+.image-container {
+  text-align: center;
+}
+
+/* confirmation_styles.css */
+
+.container-confirm-unique {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.continue-btn-confirm-unique {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.continue-btn-confirm-unique:hover {
+  background-color: #555;
+}
+
+.hotel-logo-confirm-unique {
+  display: block;
+  margin: 0 auto 20px;
+  width: 300px;
+}
+
+.confirmation-text-confirm-unique {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.confirmation-details-confirm-unique {
+  margin-bottom: 30px;
+}
+
+.signature-confirm-unique {
+  text-align: center;
+  margin-top: 30px;
+  color: #888;
+}

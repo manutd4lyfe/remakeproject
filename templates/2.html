@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+Guest list
+{% endblock %}
+
+{% block body%}
+<table>
+  <tr>
+      <th>rowid</th>
+      <th>ID</th>
+      <th>Booking #</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone #</th>
+      <th>Room type</th>
+      <th>Check-in date</th>
+      <th>Check-out date</th>
+  </tr>
+{% for row in rows %}
+<tr>
+  <td>{{row["rowid"]}}</td>
+  <td>{{row["id"]}}</td>
+  <td>{{row["bookingnr"]}}</td>
+  <td>{{row["First_name"]}}</td>
+  <td>{{row["Last_name"]}}</td>
+  <td>{{row["email"]}}</td>
+  <td>{{row["phonenumber"]}}</td>
+  <td>{{row["room_type"]}}</td>
+  <td>{{row["check_in_date"]}}</td>
+  <td>{{row["check_out_date"]}}</td>
+  <td>
+    <form action="/remove" method="POST">
+      <input type="hidden" name="id" value="{{row['id']}}">
+      <input type="submit" value="Remove">
+    </form>
+  </td>
+</tr>
+{% endfor %}
+</table>
+<a href="/">Home</a>
+{% endblock %}

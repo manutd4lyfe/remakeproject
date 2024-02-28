@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Customer Information
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Welcome, {{ customer[2] }} {{ customer[3] }}!</h1>
+                    <h1>Your booking information</h1>
+                    <form action="/remove" method="POST" onsubmit="return confirm('Are you sure you want to cancel your stay? This will incur a $30 fee.');">
+                        <input type="hidden" name="id" value="{{ customer[0] }}">
+                        <div class="menu-item">
+                            <p><strong>Booking Number:</strong> {{ customer[1] }}</p>
+                            <p><strong>Name:</strong> {{ customer[2] }} {{ customer[3] }}</p>
+                            <p><strong>Email:</strong> {{ customer[4] }}</p>
+                            <p><strong>Phone Number:</strong> {{ customer[5] }}</p>
+                            <p><strong>Room Type:</strong> {{ customer[6] }}</p>
+                            <p><strong>Check-in Date:</strong> {{ customer[7] }}</p>
+                            <p><strong>Check-out Date:</strong> {{ customer[8] }}</p>
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block mt-4 menu-item">Cancel Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Rooms
+{% endblock %}
+
+{% block body%}
+<h1>Available rooms</h1>
+<table>
+  <tr>
+      <th></th>
+      <th>ID</th>
+      <th>room_nr</th>
+      <th>room_type</th>
+      <th>price</th>
+      <th>status</th>
+  </tr>
+{% for row in rows %}
+<tr>
+  <td>{{row["rowid"]}}</td>
+  <td>{{row["id"]}}</td>
+  <td>{{row["room_nr"]}}</td>
+  <td>{{row["room_type"]}}</td>
+  <td>{{row["price"]}}</td>
+  <td>{{row["status"]}}</td>
+</tr>
+{% endfor %}
+</table>
+<a href="/">Home</a>
+{% endblock %}

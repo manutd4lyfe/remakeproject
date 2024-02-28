@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block body %}
+<a href="{{ url_for('add_rooms') }}" class="btn btn-primary mr-3">ADd Rooms</a>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <h2>Guest List</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Guest ID</th>
+                        <th>Booking Number</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Room Type</th>
+                        <th>Check-in date</th>
+                        <th>Check-out date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for guest in guests_data %}
+                    <tr>
+                        <td>{{ guest['id'] }}</td>
+                        <td>{{ guest['bookingnr'] }}</td>
+                        <td>{{ guest['First_name'] }}</td>
+                        <td>{{ guest['Last_name'] }}</td>
+                        <td>{{ guest['email'] }}</td>
+                        <td>{{ guest['phonenumber'] }}</td>
+                        <td>{{ guest['room_type'] }}</td>
+                        <td>{{ guest['check_in_date'] }}</td>
+                        <td>{{ guest['check_out_date'] }}</td>
+                        <td>
+                            <form action="/remove" method="post">
+                                <input type="hidden" name="id" value="{{ guest['id'] }}">
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </td>
+                        
+                        
+
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            <h2>Booked Rooms</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Room ID</th>
+                        <th>Room Nr</th>
+                        <th>Room Type</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for room in rooms_data %}
+                    <tr>
+                        <td>{{ room['id'] }}</td>
+                        <td>{{ room['room_nr'] }}</td>
+                        <td>{{ room['room_type'] }}</td>
+                        <td>{{ room['price'] }}</td>
+                        <td>{{ room['status'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

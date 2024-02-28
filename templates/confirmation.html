@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Confirmation
+{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="/path/to/confirmation_styles.css">
+
+    <div class="container-confirm-unique">
+        <img src="/static/logo2.jpg" alt="Hotel Logo" class="hotel-logo-confirm-unique">
+        <h1>Booking Confirmation</h1>
+        <p class="confirmation-text-confirm-unique">Dear <strong>{{ fname }} {{ lname }}</strong>, we are delighted to confirm your booking with us!<br>We have sent you an confirmation email to <b><mark>{{ email }}</b></mark></p>
+        <div class="confirmation-details-confirm-unique">
+            <table>
+                <tr>
+                    <td><strong>Booking Number:</strong></td>
+                    <td>{{ bookingnr }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>{{ fname }} {{ lname }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Email:</strong></td>
+                    <td>{{ email }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Phone Number:</strong></td>
+                    <td>{{ phonenumber }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Room Type:</strong></td>
+                    <td>{{ room_type }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Check-in Date:</strong></td>
+                    <td>{{ check_in_date }} 15:00</td>
+                </tr>
+                <tr>
+                    <td><strong>Check-out Date:</strong></td>
+                    <td>{{ check_out_date }} 12:00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="receipt-details-confirm-unique">
+            <h2>Receipt</h2>
+            <table>
+                <tr>
+                    <td><strong>Receipt Number:</strong></td>
+                    <td>123456789</td>
+                </tr>
+                <tr>
+                    <td><strong>Date:</strong></td>
+                    <td>February 23, 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Amount Paid:</strong></td>
+                    <td>$500.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Payment Method:</strong></td>
+                    <td>Visa ending in 1234</td>
+                </tr>
+                <tr>
+                    <td><strong>Room Type:</strong></td>
+                    <td>Deluxe Double Room</td>
+                </tr>
+                <tr>
+                    <td><strong>Check-in Date:</strong></td>
+                    <td>February 25, 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Check-out Date:</strong></td>
+                    <td>February 28, 2024</td>
+                </tr>
+            </table>
+        </div>
+        
+        <p class="signature">We look forward to welcoming you!<br>Best regards,<br>The Rave Oasis: Hotel Ibiza Team</p>
+        <a href="/" class="continue-btn-confirm-unique">Continue to Homepage</a>
+    </div>
+{% endblock %}

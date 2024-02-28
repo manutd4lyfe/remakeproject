@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="/static/logo2.ico" type="image/x-icon">
+  <title>Rave Oasis: Hotel Ibiza</title>
+</head>
+<body>
+  <header> 
+    <nav id="navbar">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/static/baseicon.jpg" alt="Your Logo" class="logo" style="width: 100px; height: 40px; user-select: none;">
+      </a>   
+      </div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/booknow">Rooms & Suites</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/foodanddrinks">Food & Drinks</a></li>
+        <li><a href="/spa">Relax and gym</a></li>
+        <li><a href="/contacts">Contacts</a></li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+    <br><br><br><br>
+  </header>
+
+  <div class="container">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    <div class="row">
+      <div class="col-md-3">
+        <p style="display: inline-block;">&copy; 2024 Rave Oasis: Hotel Ibiza. All rights reserved. | Designed by APA "APES"</p>
+        <img src="/static/ape.jpg" alt="Your Logo" style="display: inline-block; width: 20px; height: 20px;">
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
